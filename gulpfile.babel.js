@@ -18,7 +18,6 @@ try {
 } catch (e) {
   let warning = '\nMissing .env file. Create one before continuing.\n';
   console.warn(chalk.yellow(warning));
-  process.exit(0);
 }
 
 const production = process.env.NODE_ENV === 'production';
