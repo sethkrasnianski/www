@@ -1,0 +1,71 @@
+.left
+  float: left
+.right
+  float: right
+
+header, section, footer
+  margin: auto
+  max-width: $max-width
+  padding: $buffer $gutter
+
+.content
+  margin: auto
+  max-width: 666px
+
+header
+  #logo
+    .outline
+      opacity: 1
+      transition: opacity 0.3s ease-in-out
+    &:hover .outline
+      opacity: 0
+
+  ul
+    list-style: none
+    margin: 7px 0
+    li
+      display: inline-block
+
+.menu
+  a
+    color: $color-primary
+    display: block
+    font-family: $font-secondary
+    letter-spacing: 4px
+    margin-left: 29px
+    position: relative
+    text-decoration: none
+    text-indent: 5px
+    text-transform: uppercase
+    &:after
+      background: $color-primary
+      bottom: 0
+      content: ''
+      height: 2px
+      left: 0
+      opacity: 0
+      pointer-events: none
+      position: absolute
+      transform: translateY(8px)
+      transition: transform 0.3s, opacity 0.3s
+      width: 100%
+    &:hover:after
+      opacity: 1
+      transform: translateY(5px)
+
+footer
+  .icon
+    color: $color-primary
+    font-size: 40px
+    margin-right: 40px
+    transition: color 0.3s ease
+  a
+    &.social-github:hover i
+      color: $color-github
+    &.social-linkedin:hover i
+      color: $color-linkedin
+    &.social-facebook:hover i
+      color: $color-facebook
+
+  .menu
+    margin-top: 10px
