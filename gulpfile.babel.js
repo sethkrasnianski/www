@@ -45,7 +45,6 @@ gulp.task('server', [
 });
 
 gulp.task('jade.views', () => {
-
   return gulp.src(config.jade.views.src)
     .pipe($.changed(config.build, {extension: '.html'}))
     .pipe($.if(global.isWatching, $.cached('jade')))
