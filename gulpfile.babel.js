@@ -11,6 +11,9 @@ import env from 'node-env-file';
 import path from 'path';
 import chalk from 'chalk';
 import fs from 'fs';
+import charge from 'charge';
+import open from 'open';
+import livereload from 'livereload';
 
 try {
   fs.statSync('.env').isFile();
@@ -35,13 +38,16 @@ gulp.task('server', [
   'scripts.vendor',
   'watch'
 ], () => {
-  gulp.src(config.build)
-  .pipe($.webserver({
-    fallback: 'index.html',
-    livereload: true,
-    open: true,
-    port: config.port
-  }));
+  let url = process.env.ABS_PATH || `http://localhost:${config.port}`;
+  let server = livereload.createServer({
+    exts: config.livereload
+  });
+
+  server.watch(`${__dirname}/${config.build}`);
+
+  charge(config.build).start(config.port, function() {
+    open(url);
+  });
 });
 
 gulp.task('jade.views', () => {

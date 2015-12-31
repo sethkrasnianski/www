@@ -1,6 +1,12 @@
 {
   "build": "public",
   "port": "3883",
+  "livereload": [
+    "html",
+    "jpg",
+    "js",
+    "png"
+  ],
   "jade": {
     "views": {
       "base": "views",
