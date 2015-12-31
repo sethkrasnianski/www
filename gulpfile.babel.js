@@ -23,7 +23,8 @@ try {
 const production = process.env.NODE_ENV === 'production';
 const $ = plugins();
 const locals = {
-  live: production
+  live: production,
+  url: process.env.ABS_URL || `http://localhost:${config.port}`
 };
 
 gulp.task('server', [
