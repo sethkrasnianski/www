@@ -51,5 +51,12 @@
   "images": {
     "src": "assets/images/**/*",
     "dest": "public/images"
+  },
+  "thoughts": {
+    "markdown": "thoughts/*.md",
+    "view": {
+      "jade": "thoughts/thought.jade",
+      "out": "public/thoughts"
+    }
   }
 }

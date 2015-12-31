@@ -14,6 +14,10 @@ import fs from 'fs';
 import charge from 'charge';
 import open from 'open';
 import livereload from 'livereload';
+import es from 'event-stream';
+import yaml from 'yaml-front-matter';
+import glob from 'glob';
+import marked from 'marked';
 
 try {
   fs.statSync('.env').isFile();
@@ -29,7 +33,16 @@ const locals = {
   env: process.env.NODE_ENV
 };
 
+function think() {
+  return glob.sync(config.thoughts.markdown, {}).map((file) => {
+    let thought = yaml.loadFront(file);
+    thought.__content = marked(thought.__content);
+    return thought;
+  });
+}
+
 gulp.task('server', [
+  'thoughts.views',
   'jade.views',
   'jade.templates',
   'images',
@@ -82,6 +95,23 @@ gulp.task('jade.templates', () => {
       title: 'Sucess',
       message: 'Templates compiled'
     })));
+});
+
+gulp.task('thoughts.views', () => {
+  let thoughts = think();
+  return es.merge(thoughts.map((thought) => {
+    return gulp.src(config.thoughts.view.jade)
+      .pipe($.jade({
+        pretty: true,
+        locals: Object.assign({}, locals, {thought: thought})
+      }))
+      .pipe($.rename(`${thought.slug}.html`))
+      .pipe(gulp.dest(config.thoughts.view.out))
+      .pipe($.if(!production, $.notify({
+        title: 'Sucess',
+        message: 'Thoughts compiled'
+      })));
+  }));
 });
 
 gulp.task('images', () => {
@@ -171,9 +201,14 @@ gulp.task('watch', () => {
   gulp.watch(config.scripts.project.watch, ['scripts.project']);
   gulp.watch(config.scripts.vendor.src, ['scripts.vendor']);
   gulp.watch(config.styles.project.watch, ['stylesheets.project']);
+  gulp.watch([
+    config.thoughts.markdown,
+    config.thoughts.view.jade
+  ], ['thoughts.views']);
 });
 
 gulp.task('build', [
+  'thoughts.views',
   'jade.views',
   'jade.templates',
   'images',
