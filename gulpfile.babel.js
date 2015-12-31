@@ -11,6 +11,9 @@ import env from 'node-env-file';
 import path from 'path';
 import chalk from 'chalk';
 import fs from 'fs';
+import charge from 'charge';
+import open from 'open';
+import livereload from 'livereload';
 
 try {
   fs.statSync('.env').isFile();
@@ -21,9 +24,11 @@ try {
 }
 
 const production = process.env.NODE_ENV === 'production';
+const url = `http://localhost:${config.port}`;
 const $ = plugins();
 const locals = {
-  live: production
+  live: production,
+  url: process.env.ABS_URL || url
 };
 
 gulp.task('server', [
@@ -35,13 +40,15 @@ gulp.task('server', [
   'scripts.vendor',
   'watch'
 ], () => {
-  gulp.src(config.build)
-  .pipe($.webserver({
-    fallback: 'index.html',
-    livereload: true,
-    open: true,
-    port: config.port
-  }));
+  let server = livereload.createServer({
+    exts: config.livereload
+  });
+
+  server.watch(`${__dirname}/${config.build}`);
+
+  charge(config.build).start(config.port, function() {
+    open(url);
+  });
 });
 
 gulp.task('jade.views', () => {
