@@ -26,7 +26,7 @@ try {
 const production = process.env.NODE_ENV === 'production';
 const $ = plugins();
 const locals = {
-  live: production
+  env: process.env.NODE_ENV
 };
 
 gulp.task('server', [
