@@ -1,0 +1,20 @@
+- var n = 0
+- var max = thoughts.length > 10 ? 10 : thoughts.length
+- var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+section.content#thoughts
+  while n < max
+    - var thought = thoughts[n]
+    - var date = new Date(thought.date)
+    - var content = thought.__content.replace(/(<([^>]+)>)/ig, '')
+    article
+      aside
+        div.month= months[date.getMonth()]
+        div.day= date.getDate()
+      a(href='/thoughts/' + thought.slug)
+        h2= thought.title
+      - if (content.length > 275)
+        p !{content.substr(0, 275)}...
+      - else
+        p !{content}
+    - n++

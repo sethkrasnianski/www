@@ -26,8 +26,7 @@
     },
     "vendor": {
       "src": [
-        "bower_components/modernizr/modernizr.js",
-        "bower_components/jquery/dist/jquery.min.js"
+        "bower_components/modernizr/modernizr.js"
       ],
       "out": "vendor.js"
     },
@@ -51,5 +50,12 @@
   "images": {
     "src": "assets/images/**/*",
     "dest": "public/images"
+  },
+  "thoughts": {
+    "markdown": "thoughts/*.md",
+    "view": {
+      "jade": "thoughts/thought.jade",
+      "out": "public/thoughts"
+    }
   }
 }
