@@ -64,6 +64,7 @@ gulp.task('server', [
 });
 
 gulp.task('jade.views', () => {
+  let thoughts = think().reverse();
   return gulp.src(config.jade.views.src)
     .pipe($.changed(config.build, {extension: '.html'}))
     .pipe($.if(global.isWatching, $.cached('jade')))
@@ -73,7 +74,7 @@ gulp.task('jade.views', () => {
     }))
     .pipe($.jade({
       pretty: true,
-      locals: locals
+      locals: Object.assign({}, locals, {thoughts: thoughts})
     }))
     .pipe(gulp.dest(config.build))
     .pipe($.if(!production, $.notify({
