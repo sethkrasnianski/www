@@ -6,13 +6,20 @@
 .right
   float: right
 
+.hide
+  display: none
+
 body
   background: $white
 
 header, section, footer
   margin: auto
   max-width: $max-width
+
+header, section, footer, form
   padding: $buffer $gutter
+  +below(768px)
+    max-width: 100%
 
 .content
   margin: auto

@@ -57,5 +57,6 @@
       "jade": "thoughts/thought.jade",
       "out": "public/thoughts"
     }
-  }
+  },
+  "freelance": "not available"
 }
