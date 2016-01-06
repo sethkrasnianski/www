@@ -1,0 +1,19 @@
+form#contact(name='contact' action='thank-you' netlify)
+  hgroup.cta
+    h1.book Hello
+    h1.medium stranger!
+  p
+    | Thinking about contacting me? Before you do, I must let you know that I am
+    strong= freelance
+    |  for freelance. I'd be glad to hear your thoughts, questions, or about your fun projects!
+  fieldset
+    label.futura.book Name
+    input(type='text', name='name')
+    label.futura.book E-mail
+    input(type='text', name='email')
+    label.futura.book Subject
+    input(type='text', name='subject')
+    label.futura.book Message
+    textarea(name='message')
+    input.hide(type='text' name='robot')
+    button(type='submit') Submit

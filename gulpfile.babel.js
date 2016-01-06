@@ -30,7 +30,8 @@ try {
 const production = process.env.NODE_ENV === 'production';
 const $ = plugins();
 const locals = {
-  env: process.env.NODE_ENV
+  env: process.env.NODE_ENV,
+  freelance: config.freelance
 };
 
 function think() {

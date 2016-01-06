@@ -1,19 +1,29 @@
+*
+  box-sizing: border-box
+
 .left
   float: left
 .right
   float: right
 
-main
+.hide
+  display: none
+
+body
   background: $white
 
 header, section, footer
   margin: auto
   max-width: $max-width
+
+header, section, footer, form
   padding: $buffer $gutter
+  +below(768px)
+    max-width: 100%
 
 .content
   margin: auto
-  max-width: 666px
+  max-width: $content-width
 
 header
   #logo
@@ -72,3 +82,10 @@ footer
 
   .menu
     margin-top: 10px
+
+section#dead-end
+  svg
+    display: block
+    margin: 75px auto
+    max-width: 300px
+    width: 100%
