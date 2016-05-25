@@ -36,20 +36,24 @@ header
   ul
     list-style: none
     margin: 7px 0
+    padding: 0
     li
       display: inline-block
 
 .menu
+  li:last-child a
+    margin-left: 29px
   a
     color: $color-primary
     display: block
     font-family: $font-secondary
     letter-spacing: 4px
-    margin-left: 29px
     position: relative
     text-decoration: none
     text-indent: 5px
     text-transform: uppercase
+    +below(320px)
+      font-size: 70%
     &:after
       background: $color-primary
       bottom: 0
