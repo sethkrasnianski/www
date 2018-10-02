@@ -14,6 +14,6 @@ form#contact(name='contact' action='thank-you' netlify-honeypot="robot" netlify)
     label.futura.book Subject
     input(type='text', name='subject' required minlength="2" maxlength="255")
     label.futura.book Message
-    textarea(name='message')
+    textarea(name='message' required)
     input.hide(type='text' name='robot')
     button(type='submit') Submit
