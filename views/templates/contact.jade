@@ -1,4 +1,4 @@
-form#contact(name='contact' action='thank-you' netlify)
+form#contact(name='contact' action='thank-you' netlify-honeypot="robot" netlify)
   hgroup.cta
     h1.book Hello
     h1.medium stranger!
@@ -8,12 +8,12 @@ form#contact(name='contact' action='thank-you' netlify)
     |  for freelance. I'd be glad to hear your thoughts, questions, or about your fun projects!
   fieldset
     label.futura.book Name
-    input(type='text', name='name')
+    input(type='text', name='name' required minlength="2" maxlength="255")
     label.futura.book E-mail
-    input(type='text', name='email')
+    input(type='email', name='email' required)
     label.futura.book Subject
-    input(type='text', name='subject')
+    input(type='text', name='subject' required minlength="2" maxlength="255")
     label.futura.book Message
-    textarea(name='message')
+    textarea(name='message' required)
     input.hide(type='text' name='robot')
     button(type='submit') Submit
