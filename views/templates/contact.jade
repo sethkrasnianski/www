@@ -8,7 +8,7 @@ form#contact(name='contact' action='thank-you' netlify-honeypot="robot" netlify)
     |  for freelance. I'd be glad to hear your thoughts, questions, or about your fun projects!
   fieldset
     label.futura.book Name
-    input(type='text', name='name')
+    input(type='text', name='name' required minlength="2" maxlength="255")
     label.futura.book E-mail
     input(type='text', name='email')
     label.futura.book Subject
