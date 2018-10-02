@@ -12,7 +12,7 @@ form#contact(name='contact' action='thank-you' netlify-honeypot="robot" netlify)
     label.futura.book E-mail
     input(type='text', name='email')
     label.futura.book Subject
-    input(type='text', name='subject')
+    input(type='text', name='subject' required minlength="2" maxlength="255")
     label.futura.book Message
     textarea(name='message')
     input.hide(type='text' name='robot')
