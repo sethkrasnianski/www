@@ -12,7 +12,6 @@ import path from 'path';
 import chalk from 'chalk';
 import fs from 'fs';
 import charge from 'charge';
-import open from 'open';
 import livereload from 'livereload';
 import es from 'event-stream';
 import yaml from 'yaml-front-matter';
@@ -59,9 +58,7 @@ gulp.task('server', [
 
   server.watch(`${__dirname}/${config.build}`);
 
-  charge(config.build).start(config.port, function() {
-    open(url);
-  });
+  charge(config.build).start(config.port);
 });
 
 gulp.task('jade.views', () => {
