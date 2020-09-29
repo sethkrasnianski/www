@@ -45,7 +45,7 @@
     "gulp-util": "~2.2.12",
     "jade": "^1.11.0",
     "livereload": "^0.7.0",
-    "marked": "^0.5.1",
+    "marked": "^0.7.0",
     "node-env-file": "^0.1.7",
     "rupture": "^0.6.1",
     "vinyl-buffer": "^1.0.0",
