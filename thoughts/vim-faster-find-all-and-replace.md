@@ -1,7 +1,7 @@
 ---
 slug: vim-faster-find-all-and-replace
 title: Vim - Faster Find and Replace
-date: 03/11/2014
+date: Tue, 11 Mar 2014 00:00:00 EST
 ---
 
 Forever we've been looking toward text editors to do the heavy lifting of our heavy lifting for us, at least if you weren't around since the infancy of GNU. One task that comes to mind is replaces occurances through a file. For me it's when I'm migrating a  SQL production / staging database to my localhost for testing or when jumping into a project for the first time.

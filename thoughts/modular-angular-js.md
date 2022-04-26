@@ -1,7 +1,7 @@
 ---
 slug: modular-angular-js
 title: Modular Angular.js
-date: 02/16/2014
+date: Sun, 16 Feb 2014 12:00:00 EST
 ---
 
 Structuring a front end application is seamless when following an MVC pattern such an Angular's. But there's even a way, such as with backbone, to namespace your applications so that they're clear, concise, and meanwhile preventing a cluttered global scope.

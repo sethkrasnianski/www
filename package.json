@@ -1,58 +1,28 @@
 {
-  "name": "www-sjk",
-  "version": "0.0.1",
-  "description": "My personal website.",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:sethkrasnianski/www.git"
-  },
+  "name": "www",
+  "private": true,
   "scripts": {
-    "start": "gulp",
-    "build": "NODE_ENV=production gulp build",
-    "test": "gulp test",
-    "clean": "gulp clean"
-  },
-  "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^10.0.1",
-    "babelify": "^10.0.0",
-    "browserify": "^16.2.3",
-    "chalk": "^1.1.1",
-    "charge": "^0.1.0",
-    "envify": "^3.4.0",
-    "event-stream": "^3.3.2",
-    "glob": "^6.0.3",
-    "gulp": "^4.0.0",
-    "gulp-autoprefixer": "^2.3.1",
-    "gulp-cached": "^1.1.0",
-    "gulp-changed": "^1.2.1",
-    "gulp-concat": "~2.1.7",
-    "gulp-eslint": "^5.0.0",
-    "gulp-filter": "^2.0.2",
-    "gulp-flatten": "0.0.2",
-    "gulp-if": "^2.0.2",
-    "gulp-jade": "^1.0.1",
-    "gulp-jade-inheritance": "^0.5.5",
-    "gulp-jade-template-concat": "0.0.4",
-    "gulp-load-plugins": "^1.5.0",
-    "gulp-minify-css": "^1.1.6",
-    "gulp-notify": "^2.2.0",
-    "gulp-rename": "~1.1.0",
-    "gulp-rimraf": "^0.2.0",
-    "gulp-sourcemaps": "^1.5.2",
-    "gulp-stylus": "^2.7.0",
-    "gulp-uglify": "^1.2.0",
-    "gulp-util": "~2.2.12",
-    "jade": "^1.11.0",
-    "livereload": "^0.7.0",
-    "marked": "^0.7.0",
-    "node-env-file": "^0.1.7",
-    "rupture": "^0.6.1",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0",
-    "yaml-front-matter": "^3.2.3"
+    "dev": "next dev",
+    "build": "next build && next export -o public",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "jquery": "^3.3.1"
+    "gray-matter": "4.0.3",
+    "next": "12.1.4",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "remark": "14.0.2",
+    "remark-html": "15.0.1",
+    "remark-prism": "1.3.6",
+    "strip-markdown": "5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "16.11.13",
+    "@types/react": "17.0.37",
+    "@types/remark-prism": "1.3.0",
+    "eslint": "8.4.1",
+    "eslint-config-next": "12.0.7",
+    "typescript": "4.5.4"
   }
 }
