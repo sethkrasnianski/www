@@ -1,8 +1,10 @@
+import clsx from "clsx";
 import type { ReactElement } from "react";
+import styles from "styles/Home.module.scss";
 
 export default function HomePage(): ReactElement {
   return (
-    <section className="content" id="home">
+    <section className={clsx("content", styles.home)}>
       <hgroup className="cta">
         <h1>Full Stack</h1>
         <h1>Web Development</h1>
