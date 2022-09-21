@@ -1,0 +1,45 @@
+.footer {
+  margin: auto;
+  max-width: var(--max-width);
+  padding: var(--buffer) var(--gutter);
+
+  @media only screen and (max-width: 320px) {
+    text-align: center;
+  }
+
+  @media only screen and (max-width: 768px) {
+    max-width: 100%;
+  }
+
+  &__social {
+    &--github:hover i {
+      color: var(--color-github);
+    }
+
+    &--linkedin:hover i {
+      color: var(--color-linkedin);
+    }
+
+    i {
+      color: var(--color-primary);
+      font-size: 40px;
+      margin-right: 40px;
+      transition: color 0.3s ease;
+
+      @media only screen and (max-width: 320px) {
+        margin: 0 20px;
+      }
+    }
+  }
+
+  :global {
+    .menu {
+      margin-top: 10px;
+
+      @media only screen and (max-width: 320px) {
+        float: none;
+        margin-top: 20px;
+      }
+    }
+  }
+}
