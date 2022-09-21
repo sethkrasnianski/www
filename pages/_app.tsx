@@ -5,6 +5,7 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import Link from "next/link";
 import Script from "next/script";
+import Footer from "components/Footer";
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -56,22 +57,7 @@ function App({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
       </main>
 
-      <footer className="content">
-        <a className="social-github" href="http://github.com/sethkrasnianski">
-          <i className="icon icon-github"></i>
-        </a>
-        <a
-          className="social-linkedin"
-          href="http://linkedin.com/pub/seth-krasnianski/30/295/55"
-        >
-          <i className="icon icon-linkedin-square"></i>
-        </a>
-        <div className="right menu">
-          <Link href="/contact">
-            <a>Contact</a>
-          </Link>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }
