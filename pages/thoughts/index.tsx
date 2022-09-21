@@ -6,16 +6,20 @@ import { markdownToPlainText } from "lib/markdown";
 
 interface ThoughtsProps {
   thoughts: Thought[];
-};
+}
 
-export default function ThoughtsPage({ thoughts }: ThoughtsProps): ReactElement {
+export default function ThoughtsPage({
+  thoughts,
+}: ThoughtsProps): ReactElement {
   return (
     <section className="content" id="thoughts">
-      {thoughts.map(thought => {
+      {thoughts.map((thought) => {
         const date = new Date(thought.meta.date);
-        const content = thought.content.replace(/(<([^>]+)>)/ig, '')
+        const content = thought.content.replace(/(<([^>]+)>)/gi, "");
         const day = date.getDate();
-        const month = new Intl.DateTimeFormat('en-US', { month: 'short' }).format(date);
+        const month = new Intl.DateTimeFormat("en-US", {
+          month: "short",
+        }).format(date);
 
         return (
           <article key={thought.meta.slug}>
@@ -28,9 +32,12 @@ export default function ThoughtsPage({ thoughts }: ThoughtsProps): ReactElement 
                 <h2>{thought.meta.title}</h2>
               </a>
             </Link>
-            <p>{content.substring(0, 275)}{content.length > 275 && "..."}</p>
+            <p>
+              {content.substring(0, 275)}
+              {content.length > 275 && "..."}
+            </p>
           </article>
-        )
+        );
       })}
     </section>
   );
@@ -38,13 +45,16 @@ export default function ThoughtsPage({ thoughts }: ThoughtsProps): ReactElement 
 
 export const getStaticProps: GetStaticProps<ThoughtsProps> = async () => {
   const response = await Promise.all(
-    (await getAllThoughts())
-      .map(async thought => {
-        const content = await markdownToPlainText(thought.content)
-        return { ...thought, content };
-      })
+    (
+      await getAllThoughts()
+    ).map(async (thought) => {
+      const content = await markdownToPlainText(thought.content);
+      return { ...thought, content };
+    })
   );
-  const thoughts = response.sort((a, b) => Date.parse(b.meta.date) - Date.parse(a.meta.date))
+  const thoughts = response.sort(
+    (a, b) => Date.parse(b.meta.date) - Date.parse(a.meta.date)
+  );
 
-  return { props: { thoughts } }
-}
+  return { props: { thoughts } };
+};

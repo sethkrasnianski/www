@@ -344,11 +344,11 @@ th {
 
   --white: #f9f9f9;
   --color-primary: #383838;
-  --color-facebook: #3464A5;
+  --color-facebook: #3464a5;
   --color-github: #333333;
-  --color-javascript: #FFD402;
-  --color-linkedin: #0076B7;
-  --color-mojotech: #19BC00;
+  --color-javascript: #ffd402;
+  --color-linkedin: #0076b7;
+  --color-mojotech: #19bc00;
 
   --max-width: 990px;
   --content-width: 696px;
@@ -359,7 +359,7 @@ th {
 /* Typography */
 
 * {
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 
 body {
@@ -413,7 +413,9 @@ p {
   }
 }
 @media only screen and (max-width: 768px) {
-  h2, .cta h1, .cta h2 {
+  h2,
+  .cta h1,
+  .cta h2 {
     font-size: 138%;
   }
 }
@@ -485,7 +487,6 @@ section,
 footer {
   margin: auto;
   max-width: var(--max-width);
-
 }
 header,
 section,
@@ -536,7 +537,7 @@ header ul li {
 .menu a:after {
   background: var(--color-primary);
   bottom: 0;
-  content: '';
+  content: "";
   height: 2px;
   left: 0;
   opacity: 0;
@@ -596,7 +597,7 @@ section#dead-end .b {
   fill: none;
   stroke: #000;
   stroke-miterlimit: 10;
-  stroke-width:4px;
+  stroke-width: 4px;
 }
 
 /* forms */

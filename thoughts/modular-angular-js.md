@@ -9,11 +9,7 @@ Structuring a front end application is seamless when following an MVC pattern su
 ## Declare Your Application
 
 ```javascript
-F1 = angular.module('F1', [
-  'F1.controllers',
-  'F1.services',
-  'ngRoute',
-])
+F1 = angular.module("F1", ["F1.controllers", "F1.services", "ngRoute"]);
 ```
 
 What we first do is declare a variable, F1 which will be our namespace. We also name our module the same name as our variable for internal angular namespacing. Within this module, we pass an array containing 3 dependencies of our main application module. Each dependency aside from ngRoute is a property of our application variable, F1.
@@ -21,23 +17,26 @@ What we first do is declare a variable, F1 which will be our namespace. We also 
 ## The API
 
 ```javascript
-F1.api.factory('API', function($http) {
+F1.api.factory("API", function ($http) {
   var API = {};
 
-  API.getDrivers       = function() {
-    return $http.get('http://ergast.com/api/f1/2014/driverStandings.json');
+  API.getDrivers = function () {
+    return $http.get("http://ergast.com/api/f1/2014/driverStandings.json");
   };
 
-  API.getDriverDetails = function(id) {
-    return $http.get('http://ergast.com/api/f1/2014/drivers/'+ id +'/driverStandings.json?');
+  API.getDriverDetails = function (id) {
+    return $http.get(
+      "http://ergast.com/api/f1/2014/drivers/" + id + "/driverStandings.json?"
+    );
   };
 
-  API.getDriverRaces   = function(id) {
-    return $http.get('http://ergast.com/api/f1/2014/drivers/'+ id +'/results.json?');
+  API.getDriverRaces = function (id) {
+    return $http.get(
+      "http://ergast.com/api/f1/2014/drivers/" + id + "/results.json?"
+    );
   };
 
   return API;
-
 });
 ```
 
@@ -58,16 +57,21 @@ For our controllers we have one for all drivers and one for a single driver. We'
 ## Drivers:
 
 ```javascript
-F1.controllers.controller('driversController', function($scope, API) {
-  $scope.nameFilter   = null;
-  $scope.drivers      = [];
-  $scope.searchFilter = function(driver) {
-    var keyword = new RegExp($scope.nameFilter, 'i');
-    return !$scope.nameFilter || keyword.test(driver.Driver.givenName) || keyword.test(driver.Driver.familyName);
+F1.controllers.controller("driversController", function ($scope, API) {
+  $scope.nameFilter = null;
+  $scope.drivers = [];
+  $scope.searchFilter = function (driver) {
+    var keyword = new RegExp($scope.nameFilter, "i");
+    return (
+      !$scope.nameFilter ||
+      keyword.test(driver.Driver.givenName) ||
+      keyword.test(driver.Driver.familyName)
+    );
   };
 
-  API.getDrivers().success(function(data) {
-    $scope.drivers = data.MRData.StandingsTable.StandingsLists[0].DriverStandings;
+  API.getDrivers().success(function (data) {
+    $scope.drivers =
+      data.MRData.StandingsTable.StandingsLists[0].DriverStandings;
   });
 });
 ```
@@ -87,19 +91,23 @@ Finally we utilize our API factory's method getDrivers. Upon success of the ajax
 ## Driver:
 
 ```javascript
-F1.controllers.controller('driverController', function($scope, $routeParams, API) {
-  $scope.id     = $routeParams.id;
-  $scope.races  = [];
-  $scope.driver = null;
+F1.controllers.controller(
+  "driverController",
+  function ($scope, $routeParams, API) {
+    $scope.id = $routeParams.id;
+    $scope.races = [];
+    $scope.driver = null;
 
-  API.getDriverDetails($scope.id).success(function(data) {
-    $scope.driver = data.MRData.StandingsTable.StandingsLists[0].DriverStandings[0];
-  });
+    API.getDriverDetails($scope.id).success(function (data) {
+      $scope.driver =
+        data.MRData.StandingsTable.StandingsLists[0].DriverStandings[0];
+    });
 
-  API.getDriverRaces($scope.id).success(function(data) {
-    $scope.races  = data.MRData.RaceTable.Races;
-  });
-});
+    API.getDriverRaces($scope.id).success(function (data) {
+      $scope.races = data.MRData.RaceTable.Races;
+    });
+  }
+);
 ```
 
 For our last custom dependency, we have our driverController. This controller has three local $scope properties, id, races, and driver. The function accepts $scope, $routeParams from our ngRoute dependency, and our API factory.
