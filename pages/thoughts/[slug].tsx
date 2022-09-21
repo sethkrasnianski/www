@@ -23,10 +23,9 @@ interface PageParams extends ParsedUrlQuery {
 }
 
 export const getStaticProps: GetStaticProps<ThoughtProps, PageParams> = async (context) => {
-  // We know a slug will exist as we mapped all possible slugs in getStaticPaths
-  // This is why we use the Non-null assertion operator
-  const slug = context.params!.slug;
   try {
+    if (!context.params?.slug) throw new Error('Slug required')
+    const slug = context.params.slug;
     const response = await getThoughtBySlug(slug);
     const content = await markdownToHtml(response.content)
     const thought: Thought = { ...response, content };
