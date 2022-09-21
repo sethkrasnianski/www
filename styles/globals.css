@@ -362,10 +362,6 @@ th {
   box-sizing: border-box;
 }
 
-body {
-  background: var(--white);
-}
-
 h1,
 h2,
 h3,
