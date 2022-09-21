@@ -482,12 +482,10 @@ body {
   background: var(--white);
 }
 
-header,
 section {
   margin: auto;
   max-width: var(--max-width);
 }
-header,
 section,
 form {
   padding: var(--buffer) var(--gutter);
@@ -495,24 +493,6 @@ form {
 .content {
   margin: auto;
   max-width: var(--content-width);
-}
-header #logo {
-  fill: var(--color-primary);
-}
-header #logo .outline {
-  opacity: 1;
-  transition: opacity 0.3s ease-in-out;
-}
-header #logo:hover .outline {
-  opacity: 0;
-}
-header ul {
-  list-style: none;
-  margin: 7px 0;
-  padding: 0;
-}
-header ul li {
-  display: inline-block;
 }
 .menu li:last-child a {
   margin-left: 29px;
@@ -663,7 +643,6 @@ form button {
   padding: 7px 10px 0px 10px;
 }
 @media only screen and (max-width: 768px) {
-  header,
   section,
   form {
     max-width: 100%;

@@ -1,0 +1,34 @@
+.header {
+  margin: auto;
+  max-width: var(--max-width);
+  padding: var(--buffer) var(--gutter);
+
+  @media only screen and (max-width: 768px) {
+    max-width: 100%;
+  }
+
+  a {
+    color: var(--color-primary);
+  }
+
+  svg {
+    &:hover > path:first-of-type {
+      opacity: 0;
+    }
+
+    > path {
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out;
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: 7px 0;
+    padding: 0;
+
+    li {
+      display: inline-block;
+    }
+  }
+}
