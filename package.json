@@ -11,6 +11,7 @@
     "format": "prettier --write \"$npm_package_config_prettier\""
   },
   "dependencies": {
+    "clsx": "^1.2.1",
     "gray-matter": "4.0.3",
     "next": "12.1.4",
     "react": "17.0.2",
