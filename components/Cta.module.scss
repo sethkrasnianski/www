@@ -1,0 +1,19 @@
+.cta {
+  padding: 40px 0;
+
+  h1 {
+    margin: 0;
+    text-align: center;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 138%;
+    }
+
+    span {
+      display: block;
+      &:last-child {
+        font-weight: 500;
+      }
+    }
+  }
+}

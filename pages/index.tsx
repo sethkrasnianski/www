@@ -1,14 +1,12 @@
 import clsx from "clsx";
+import Cta from "components/Cta";
 import type { ReactElement } from "react";
 import styles from "styles/Home.module.scss";
 
 export default function HomePage(): ReactElement {
   return (
     <section className={clsx("content", styles.home)}>
-      <hgroup className="cta">
-        <h1>Full Stack</h1>
-        <h1>Web Development</h1>
-      </hgroup>
+      <Cta top="Full Stack" bottom="Web Development" />
       <p>
         Welcome to my humble abode. I am Seth John Krasnianski, a Software
         Engineer at{" "}

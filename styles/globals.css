@@ -407,26 +407,10 @@ p {
   p {
     font-size: 110%;
   }
-}
-@media only screen and (max-width: 768px) {
-  h2,
-  .cta h1,
-  .cta h2 {
+
+  h2 {
     font-size: 138%;
   }
-}
-
-.cta {
-  padding: 40px 0;
-}
-
-.cta h1 {
-  margin: 0;
-  text-align: center;
-}
-
-.cta h1:last-child {
-  font-weight: 500;
 }
 
 .github {
