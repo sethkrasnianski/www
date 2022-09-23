@@ -413,38 +413,6 @@ p {
   }
 }
 
-.github {
-  color: var(--color-github);
-}
-
-.github:after {
-  background: var(--color-github);
-}
-
-.javascript {
-  color: var(--color-javascript);
-}
-
-.javascript:after {
-  background: var(--color-javascript);
-}
-
-.linkedin {
-  color: var(--color-linkedin);
-}
-
-.linkedin:after {
-  background: var(--color-linkedin);
-}
-
-.mojotech {
-  color: var(--color-mojotech);
-}
-
-.mojotech:after {
-  background: var(--color-mojotech);
-}
-
 /* Layout */
 .left {
   float: left;
