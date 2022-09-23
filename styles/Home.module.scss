@@ -20,5 +20,34 @@
     &:hover:after {
       bottom: 10px;
     }
+
+    &.mojotech {
+      color: var(--color-mojotech);
+      &:after {
+        background: var(--color-mojotech);
+      }
+    }
+
+    &.javascript {
+      color: var(--color-javascript);
+
+      &:after {
+        background: var(--color-javascript);
+      }
+    }
+
+    &.linkedin {
+      color: var(--color-linkedin);
+      &:after {
+        background: var(--color-linkedin);
+      }
+    }
+
+    &.github {
+      color: var(--color-github);
+      &:after {
+        background: var(--color-github);
+      }
+    }
   }
 }

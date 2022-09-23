@@ -10,19 +10,19 @@ export default function HomePage(): ReactElement {
       <p>
         Welcome to my humble abode. I am Seth John Krasnianski, a Software
         Engineer at{" "}
-        <a className="mojotech" href="https://www.mojotech.com">
+        <a className={styles.mojotech} href="https://www.mojotech.com">
           MojoTech
         </a>
         . Orchestrating the life cycle of web applications and solving problems
         is what I do for a living. When not on{" "}
         <a
-          className="javascript"
+          className={styles.javascript}
           href="http://stackoverflow.com/users/1842294/seth?tab=tags"
         >
           JavaScript
         </a>{" "}
         benders, you can find me contributing to the open source community on{" "}
-        <a className="github" href="http://github.com/sethkrasnianski">
+        <a className={styles.github} href="http://github.com/sethkrasnianski">
           GitHub
         </a>
         .
