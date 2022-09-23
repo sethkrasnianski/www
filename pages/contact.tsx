@@ -1,3 +1,4 @@
+import Cta from "components/Cta";
 import type { ReactElement } from "react";
 
 export default function ContactPage(): ReactElement {
@@ -10,10 +11,7 @@ export default function ContactPage(): ReactElement {
       netlify-honeypot="robot"
       data-netlify="netlify"
     >
-      <header className="cta">
-        <h1 className="book">Hello</h1>
-        <h1 className="medium">stranger!</h1>
-      </header>
+      <Cta top="Hello" bottom="stranger!" />
       <p>
         Thinking about contacting me? Before you do, I must let you know that I
         am<strong>not available</strong> for freelance. I&apos;d be glad to hear
