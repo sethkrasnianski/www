@@ -12,6 +12,7 @@ const Header: React.FC = () => {
             viewBox="0 0 122 82"
             width="51px"
             height="31px"
+            fill="currentColor"
           >
             <path
               className="a"

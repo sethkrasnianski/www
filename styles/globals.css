@@ -354,6 +354,22 @@ th {
   --content-width: 696px;
   --gutter: 15px;
   --buffer: 20px;
+
+  --background: var(--white);
+  --button-background-color: var(--color-primary);
+  --button-border: none;
+  --button-text-color: var(--white);
+  --strong-background: var(--color-primary);
+  --text: var(--color-primary);
+}
+
+[data-theme="dark"] {
+  --color-github: #8250df;
+
+  --background: var(--color-primary);
+  --button-border: 1px solid var(--white);
+  --strong-background: var(--white);
+  --text: var(--white);
 }
 
 /* Typography */
@@ -369,7 +385,7 @@ h4,
 h5,
 h6,
 p {
-  color: var(--color-primary);
+  color: var(--text);
   text-rendering: optimizelegibility;
 }
 h3,
@@ -427,7 +443,7 @@ p {
 }
 
 body {
-  background: var(--white);
+  background: var(--background);
 }
 
 section {
@@ -446,7 +462,7 @@ form {
   margin-left: 29px;
 }
 .menu a {
-  color: var(--color-primary);
+  color: var(--text);
   display: block;
   font-family: var(--font-secondary);
   letter-spacing: 4px;
@@ -461,7 +477,7 @@ form {
   }
 }
 .menu a:after {
-  background: var(--color-primary);
+  background: var(--text);
   bottom: 0;
   content: "";
   height: 2px;
@@ -495,12 +511,16 @@ section#dead-end .b {
   stroke-width: 4px;
 }
 
+pre {
+  color: var(--text);
+}
+
 /* forms */
 .button,
 button {
-  background-color: var(--color-primary);
-  border: none;
-  color: var(--white);
+  background-color: var(--button-background-color);
+  border: var(--button-border);
+  color: var(--button-text-color);
   display: inline-block;
   font-family: var(--font-secondary);
   font-size: 16px;
@@ -530,6 +550,7 @@ form textarea {
   letter-spacing: 3px;
 }
 form label {
+  color: var(--text);
   display: block;
   padding: 10px 0;
   text-transform: uppercase;
@@ -571,6 +592,7 @@ form button {
 #thoughts aside .month,
 #thoughts aside .day {
   font-family: var(--font-secondary);
+  color: var(--text);
 }
 #thoughts aside .month {
   text-transform: uppercase;
@@ -583,8 +605,8 @@ form button {
   padding-bottom: 40px;
 }
 #contact strong {
-  background: var(--color-primary);
-  color: var(--white);
+  background: var(--strong-background);
+  color: var(--background);
   display: inline-block;
   font-size: 1.125em;
   margin: 0 7px;
