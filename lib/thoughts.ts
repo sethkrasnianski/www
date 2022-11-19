@@ -25,7 +25,13 @@ export async function getThoughtBySlug(slug: string): Promise<Thought> {
 
 export async function getAllThoughts(): Promise<Thought[]> {
   const slugs = await fs.promises.readdir(thoughtsDirectory);
-  const thoughts = slugs.map(async (slug) => await getThoughtBySlug(slug));
+  let thoughts: Thought[] = [];
+  for (const slug of slugs) {
+    const thought = await getThoughtBySlug(slug);
+    thoughts.push(thought);
+  }
 
-  return Promise.all(thoughts);
+  return thoughts.sort(
+    (a, b) => Date.parse(b.meta.date) - Date.parse(a.meta.date)
+  );
 }

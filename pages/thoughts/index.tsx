@@ -44,16 +44,13 @@ export default function ThoughtsPage({
 }
 
 export const getStaticProps: GetStaticProps<ThoughtsProps> = async () => {
-  const response = await Promise.all(
+  const thoughts = await Promise.all(
     (
       await getAllThoughts()
     ).map(async (thought) => {
       const content = await markdownToPlainText(thought.content);
       return { ...thought, content };
     })
-  );
-  const thoughts = response.sort(
-    (a, b) => Date.parse(b.meta.date) - Date.parse(a.meta.date)
   );
 
   return { props: { thoughts } };
