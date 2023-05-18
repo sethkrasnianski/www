@@ -17,7 +17,7 @@ export default function HomePage(): ReactElement {
         is what I do for a living. When not on{" "}
         <a
           className={styles.javascript}
-          href="http://stackoverflow.com/users/1842294/seth?tab=tags"
+          href="https://stackoverflow.com/users/1842294/seth?tab=topactivity"
         >
           JavaScript
         </a>{" "}
