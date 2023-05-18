@@ -13,6 +13,7 @@ export default function HomePage(): ReactElement {
         <a
           className={styles.mojotech}
           target="_blank"
+          rel="noreferrer"
           href="https://www.mojotech.com"
         >
           MojoTech
@@ -22,6 +23,7 @@ export default function HomePage(): ReactElement {
         <a
           className={styles.javascript}
           target="_blank"
+          rel="noreferrer"
           href="https://stackoverflow.com/users/1842294/seth?tab=topactivity"
         >
           JavaScript
@@ -30,6 +32,7 @@ export default function HomePage(): ReactElement {
         <a
           className={styles.github}
           target="_blank"
+          rel="noreferrer"
           href="http://github.com/sethkrasnianski"
         >
           GitHub

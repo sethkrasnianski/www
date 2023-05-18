@@ -11,6 +11,7 @@ const Footer: React.FC = () => {
           styles["footer__social--github"]
         )}
         target="_blank"
+        rel="noreferrer"
         href="http://github.com/sethkrasnianski"
       >
         <i className="icon icon-github"></i>
@@ -21,6 +22,7 @@ const Footer: React.FC = () => {
           styles["footer__social--linkedin"]
         )}
         target="_blank"
+        rel="noreferrer"
         href="http://linkedin.com/pub/seth-krasnianski/30/295/55"
       >
         <i className="icon icon-linkedin-square"></i>
