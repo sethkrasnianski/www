@@ -28,9 +28,7 @@ const Footer: React.FC = () => {
         <i className="icon icon-linkedin-square"></i>
       </a>
       <div className="right menu">
-        <Link href="/contact">
-          <a>Contact</a>
-        </Link>
+        <Link href="/contact">Contact</Link>
       </div>
     </footer>
   );
