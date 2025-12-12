@@ -7,7 +7,7 @@
     text-decoration: none;
 
     &:after {
-      bottom: 5px;
+      bottom: -4px;
       content: "";
       display: block;
       height: 2px;
@@ -18,7 +18,7 @@
     }
 
     &:hover:after {
-      bottom: 10px;
+      bottom: 1px;
     }
 
     &.mojotech {

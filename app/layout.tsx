@@ -27,7 +27,16 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="stylesheet" href="https://use.typekit.net/qka6xnx.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Libre+Caslon+Text:ital@0;1&display=swap"
+          rel="stylesheet"
+        />
       </head>
       <body>
         <Script src="https://use.fonticons.com/13897413.js" />

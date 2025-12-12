@@ -339,8 +339,8 @@ th {
 /* Application Globals */
 
 :root {
-  --font-primary: "adobe-caslon-pro", Georgia, serif;
-  --font-secondary: "futura-pt", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-primary: "Libre Caslon Text", Georgia, serif;
+  --font-secondary: "Jost", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   --white: #f9f9f9;
   --color-primary: #383838;
@@ -416,7 +416,7 @@ h2 {
 }
 p {
   font-family: var(--font-primary);
-  font-size: 22px;
+  font-size: 19px;
   line-height: 35px;
 }
 @media only screen and (max-width: 768px) {
@@ -554,6 +554,7 @@ form textarea {
 form label {
   color: var(--text);
   display: block;
+  font-family: var(--font-secondary);
   padding: 10px 0;
   text-transform: uppercase;
 }
@@ -610,9 +611,8 @@ form button {
   background: var(--strong-background);
   color: var(--background);
   display: inline-block;
-  font-size: 1.125em;
   margin: 0 7px;
-  padding: 7px 10px 0px 10px;
+  padding: 0px 10px 0px 10px;
 }
 @media only screen and (max-width: 768px) {
   section,
