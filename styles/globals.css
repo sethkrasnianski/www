@@ -486,7 +486,9 @@ form {
   pointer-events: none;
   position: absolute;
   transform: translateY(8px);
-  transition: transform 0.3s, opacity 0.3s;
+  transition:
+    transform 0.3s,
+    opacity 0.3s;
   width: 100%;
 }
 .menu a:hover:after {

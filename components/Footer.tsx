@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
       <a
         className={clsx(
           styles["footer__social"],
-          styles["footer__social--github"]
+          styles["footer__social--github"],
         )}
         target="_blank"
         rel="noreferrer"
@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
       <a
         className={clsx(
           styles["footer__social"],
-          styles["footer__social--linkedin"]
+          styles["footer__social--linkedin"],
         )}
         target="_blank"
         rel="noreferrer"
