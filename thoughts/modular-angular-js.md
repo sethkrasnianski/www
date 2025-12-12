@@ -26,13 +26,13 @@ F1.api.factory("API", function ($http) {
 
   API.getDriverDetails = function (id) {
     return $http.get(
-      "http://ergast.com/api/f1/2014/drivers/" + id + "/driverStandings.json?"
+      "http://ergast.com/api/f1/2014/drivers/" + id + "/driverStandings.json?",
     );
   };
 
   API.getDriverRaces = function (id) {
     return $http.get(
-      "http://ergast.com/api/f1/2014/drivers/" + id + "/results.json?"
+      "http://ergast.com/api/f1/2014/drivers/" + id + "/results.json?",
     );
   };
 
@@ -106,7 +106,7 @@ F1.controllers.controller(
     API.getDriverRaces($scope.id).success(function (data) {
       $scope.races = data.MRData.RaceTable.Races;
     });
-  }
+  },
 );
 ```
 
