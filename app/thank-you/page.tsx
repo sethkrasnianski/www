@@ -1,7 +1,6 @@
 import Cta from "components/Cta";
-import type { ReactElement } from "react";
 
-export default function ContactPage(): ReactElement {
+export default function ThankYouPage() {
   return (
     <section className="content" id="thank-you">
       <Cta top="Thank You" bottom="For Contacting Me!" />

@@ -1,7 +1,6 @@
 import Cta from "components/Cta";
-import type { ReactElement } from "react";
 
-export default function ContactPage(): ReactElement {
+export default function ContactPage() {
   return (
     <form
       id="contact"
