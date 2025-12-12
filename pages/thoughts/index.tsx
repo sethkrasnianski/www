@@ -28,9 +28,7 @@ export default function ThoughtsPage({
               <div className="day">{day}</div>
             </aside>
             <Link href={`/thoughts/${thought.meta.slug}`}>
-              <a>
-                <h2>{thought.meta.title}</h2>
-              </a>
+              <h2>{thought.meta.title}</h2>
             </Link>
             <p>
               {content.substring(0, 275)}

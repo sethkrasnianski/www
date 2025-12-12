@@ -2,8 +2,9 @@ import Head from "next/head";
 import Script from "next/script";
 import Footer from "components/Footer";
 import Header from "components/Header";
+import { PropsWithChildren } from "react";
 
-const Layout: React.FC = ({ children }) => {
+const Layout: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <>
       <Head>
