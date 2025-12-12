@@ -1,9 +1,8 @@
 import clsx from "clsx";
 import Cta from "components/Cta";
-import type { ReactElement } from "react";
 import styles from "styles/Home.module.scss";
 
-export default function HomePage(): ReactElement {
+export default function HomePage() {
   return (
     <section className={clsx("content", styles.home)}>
       <Cta top="Full Stack" bottom="Web Development" />

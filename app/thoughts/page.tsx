@@ -1,16 +1,18 @@
-import type { ReactElement } from "react";
-import { GetStaticProps } from "next";
-import { getAllThoughts, Thought } from "lib/thoughts";
 import Link from "next/link";
+import { getAllThoughts } from "lib/thoughts";
 import { markdownToPlainText } from "lib/markdown";
 
-interface ThoughtsProps {
-  thoughts: Thought[];
-}
+export default async function ThoughtsPage() {
+  const response = await Promise.all(
+    (await getAllThoughts()).map(async (thought) => {
+      const content = await markdownToPlainText(thought.content);
+      return { ...thought, content };
+    }),
+  );
+  const thoughts = response.sort(
+    (a, b) => Date.parse(b.meta.date) - Date.parse(a.meta.date),
+  );
 
-export default function ThoughtsPage({
-  thoughts,
-}: ThoughtsProps): ReactElement {
   return (
     <section className="content" id="thoughts">
       {thoughts.map((thought) => {
@@ -40,19 +42,3 @@ export default function ThoughtsPage({
     </section>
   );
 }
-
-export const getStaticProps: GetStaticProps<ThoughtsProps> = async () => {
-  const response = await Promise.all(
-    (
-      await getAllThoughts()
-    ).map(async (thought) => {
-      const content = await markdownToPlainText(thought.content);
-      return { ...thought, content };
-    })
-  );
-  const thoughts = response.sort(
-    (a, b) => Date.parse(b.meta.date) - Date.parse(a.meta.date)
-  );
-
-  return { props: { thoughts } };
-};

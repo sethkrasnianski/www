@@ -1,6 +1,4 @@
-import type { ReactElement } from "react";
-
-export default function ContactPage(): ReactElement {
+export default function NotFound() {
   return (
     <section id="dead-end">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 264.37 264.37">
@@ -51,7 +49,7 @@ export default function ContactPage(): ReactElement {
           transform="translate(-118.25 -113.15)"
         ></path>
         <path
-          d="M274,255.44h6.87c3.38,0,8.18.35,12.43,3.94A16.42,16.42,0,0,1,299,272.32a16,16,0,0,1-5.91,12.93c-3.08,2.63-6.32,3.89-12.33,3.89H274V255.44Zm3.74,30.16H281a14.4,14.4,0,0,0,9.65-3,12.89,12.89,0,0,0,4.55-10.25c0-8.08-5.66-13.34-14.2-13.34h-3.28V285.6Z"
+          d="M274.94,255.44h6.87c3.38,0,8.18.35,12.43,3.94a16.43,16.43,0,0,1,5.76,12.93A16,16,0,0,1,294.09,285c-3.08,2.63-6.32,3.89-12.33,3.89h-6.82V255.44Zm3.74,30.16h3.28a14.4,14.4,0,0,0,9.65-3,12.89,12.89,0,0,0,4.55-10.26c0-8.08-5.66-13.34-14.2-13.34h-3.28V285.6Z"
           transform="translate(-118.25 -113.15)"
         ></path>
       </svg>
