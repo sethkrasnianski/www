@@ -17,13 +17,13 @@ export default function ContactPage() {
         your thoughts, questions, or about your fun projects!
       </p>
       <fieldset>
-        <label className="futura book">Name</label>
+        <label>Name</label>
         <input type="text" name="name" required minLength={2} maxLength={255} />
 
-        <label className="futura book">E-mail</label>
+        <label>E-mail</label>
         <input type="email" name="email" required />
 
-        <label className="futura book">Subject</label>
+        <label>Subject</label>
         <input
           type="text"
           name="subject"
@@ -32,7 +32,7 @@ export default function ContactPage() {
           maxLength={255}
         />
 
-        <label className="futura book">Message</label>
+        <label>Message</label>
         <textarea name="message" required></textarea>
 
         <input className="hide" type="text" name="robot" />
