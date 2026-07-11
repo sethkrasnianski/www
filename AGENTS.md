@@ -19,5 +19,6 @@ Next.js portfolio site using the App Router, TypeScript, Sass, and npm.
 ## Conventions
 
 - Use the existing TypeScript, App Router, and Sass patterns.
+- Next.js rewrites the tracked `next-env.d.ts` route-types import while `npm run dev` runs. Do not commit a change that only switches between `.next/types/routes.d.ts` and `.next/dev/types/routes.d.ts`.
 - Keep `README.md` current as the project evolves.
 - Update this file when project guidance or layout materially changes without bloating it.
