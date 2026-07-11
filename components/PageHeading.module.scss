@@ -1,0 +1,37 @@
+.wrapper {
+  margin-bottom: clamp(36px, 5vw, 56px);
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: clamp(20px, 3vw, 32px);
+}
+
+.tick {
+  width: 34px;
+  height: 2px;
+  background: var(--accent);
+  display: inline-block;
+}
+
+.label {
+  font-family: var(--font-secondary);
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--disp-fam);
+  font-style: var(--disp-style);
+  font-weight: var(--disp-weight);
+  text-transform: var(--disp-tt);
+  letter-spacing: var(--disp-ls);
+  line-height: 1;
+  font-size: clamp(40px, 7vw, 84px);
+  color: var(--fg);
+}
