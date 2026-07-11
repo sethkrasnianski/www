@@ -1,34 +1,94 @@
 .header {
-  margin: auto;
-  max-width: var(--max-width);
-  padding: var(--buffer) var(--gutter);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    backdrop-filter 0.3s ease;
 
-  @media only screen and (max-width: 768px) {
-    max-width: 100%;
+  &.scrolled {
+    background: var(--bg-blur);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom-color: var(--line);
+  }
+}
+
+.inner {
+  padding: 20px clamp(20px, 5vw, 64px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(22px, 3.5vw, 44px);
+}
+
+.navLink {
+  position: relative;
+  color: var(--fg);
+  text-decoration: none;
+  font-family: var(--font-secondary);
+  font-size: 14px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+
+  &:hover,
+  &.active {
+    color: var(--accent);
+  }
+}
+
+.navLabel {
+  position: relative;
+
+  .navLink &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    height: 2px;
+    width: 100%;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
   }
 
-  a {
-    color: var(--text);
+  .navLink:hover &::after,
+  .active &::after {
+    transform: scaleX(1);
   }
+}
 
-  svg {
-    &:hover > path:first-of-type {
-      opacity: 0;
-    }
+.themeToggle {
+  background: none;
+  border: none;
+  padding: 0;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--muted);
+  transition: color 0.3s ease;
 
-    > path {
-      opacity: 1;
-      transition: opacity 0.3s ease-in-out;
-    }
-  }
-
-  ul {
-    list-style: none;
-    margin: 7px 0;
-    padding: 0;
-
-    li {
-      display: inline-block;
-    }
+  &:hover {
+    color: var(--accent);
   }
 }
