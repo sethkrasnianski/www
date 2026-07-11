@@ -179,9 +179,6 @@ th {
 
 /* Application Globals */
 :root {
-  --font-primary: "Libre Caslon Text", Georgia, serif;
-  --font-secondary: "Jost", "Helvetica Neue", Helvetica, Arial, sans-serif;
-
   --bg: #f7f4ef;
   --card: #ffffff;
   --fg: #1f1f1f;
@@ -195,7 +192,8 @@ th {
   --c-gh: #5b3ecc;
   --accent: #c0392b;
 
-  --disp-fam: var(--font-secondary);
+  --disp-fam:
+    var(--font-secondary), "Helvetica Neue", Helvetica, Arial, sans-serif;
   --disp-style: normal;
   --disp-weight: 600;
   --disp-tt: uppercase;
@@ -226,7 +224,7 @@ th {
 body {
   background: var(--bg);
   color: var(--fg);
-  font-family: var(--font-primary);
+  font-family: var(--font-primary), Georgia, serif;
   transition:
     background 0.4s ease,
     color 0.4s ease;
