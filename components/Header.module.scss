@@ -29,6 +29,51 @@
   align-items: center;
   color: var(--fg);
   text-decoration: none;
+
+  &:hover .logoFrame,
+  &:focus-visible .logoFrame {
+    stroke: var(--accent);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 6px;
+  }
+}
+
+.logoMark {
+  overflow: visible;
+}
+
+.logoFrame {
+  transition: stroke 0.2s ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logoFrame {
+    stroke-dasharray: 388;
+    stroke-dashoffset: 388;
+    animation: drawLogoFrame 0.45s ease-out forwards;
+  }
+
+  .logoInitials {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+    animation: revealLogoInitials 0.25s ease-out 0.38s forwards;
+  }
+}
+
+@keyframes drawLogoFrame {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes revealLogoInitials {
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
 }
 
 .nav {
