@@ -1,0 +1,70 @@
+.section {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: clamp(48px, 8vw, 110px) clamp(20px, 5vw, 64px) clamp(48px, 6vw, 90px);
+}
+
+.intro {
+  max-width: 560px;
+  font-family: var(--font-primary);
+  font-size: clamp(19px, 2.2vw, 22px);
+  line-height: 1.7;
+  color: var(--fg);
+  margin: 0 0 44px;
+}
+
+.highlight {
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 400;
+  margin-right: 0.25em;
+  padding: 1px 9px;
+  white-space: nowrap;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 22px 24px;
+  text-decoration: none;
+  border: 1px solid var(--line-strong);
+  background: var(--card);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+  color: var(--fg);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.09);
+  }
+}
+
+.category {
+  font-family: var(--font-secondary);
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.name {
+  font-family: var(--font-secondary);
+  font-size: 17px;
+  color: var(--fg);
+  margin-top: 2px;
+}
+
+.glyph {
+  margin-left: auto;
+  font-size: 18px;
+  color: var(--muted);
+}

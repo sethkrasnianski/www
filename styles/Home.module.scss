@@ -1,53 +1,82 @@
-.home {
-  h2 {
-    letter-spacing: 6px;
+.hero {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: clamp(48px, 8vw, 110px) clamp(20px, 5vw, 64px) 0;
+  overflow: hidden;
+}
+
+.heroLine {
+  display: block;
+  font-size: clamp(40px, 7vw, 84px);
+  line-height: 0.98;
+}
+
+.heroAccent {
+  display: block;
+  color: var(--accent);
+  font-size: clamp(40px, 7vw, 84px);
+  line-height: 0.98;
+}
+
+.body {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 64px) clamp(40px, 6vw, 72px);
+}
+
+.paragraph {
+  font-family: var(--font-primary);
+  font-size: clamp(19px, 2.2vw, 22px);
+  line-height: 1.75;
+  color: var(--fg);
+  margin: 0 0 32px;
+}
+
+.sectionLabel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 48px 0 28px;
+
+  span:first-child {
+    font-family: var(--font-secondary);
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--muted);
   }
-  a {
-    position: relative;
-    text-decoration: none;
+}
 
-    &:after {
-      bottom: -4px;
-      content: "";
-      display: block;
-      height: 2px;
-      left: 0;
-      position: absolute;
-      transition: bottom 0.2s ease-in-out;
-      width: 100%;
-    }
+.hairline {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
 
-    &:hover:after {
-      bottom: 1px;
-    }
+.linkMojo,
+.linkJs,
+.linkGh {
+  color: inherit;
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1.5px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 0.3s ease;
 
-    &.mojotech {
-      color: var(--color-mojotech);
-      &:after {
-        background: var(--color-mojotech);
-      }
-    }
-
-    &.javascript {
-      color: var(--color-javascript);
-
-      &:after {
-        background: var(--color-javascript);
-      }
-    }
-
-    &.linkedin {
-      color: var(--color-linkedin);
-      &:after {
-        background: var(--color-linkedin);
-      }
-    }
-
-    &.github {
-      color: var(--color-github);
-      &:after {
-        background: var(--color-github);
-      }
-    }
+  &:hover {
+    background-size: 100% 1.5px;
   }
+}
+
+.linkMojo {
+  color: var(--c-mojo);
+}
+
+.linkJs {
+  color: var(--c-js);
+}
+
+.linkGh {
+  color: var(--c-gh);
 }
