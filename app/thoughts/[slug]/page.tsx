@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { markdownToHtml } from "lib/markdown";
 import { getAllThoughts, getThoughtBySlug } from "lib/thoughts";
+import styles from "./page.module.scss";
 
 interface ThoughtPageProps {
   params: Promise<{ slug: string }>;
@@ -33,12 +34,12 @@ export default async function ThoughtPage({ params }: ThoughtPageProps) {
   }
 
   return (
-    <section className="content" id="thought">
-      <h1>{thought.meta.title}</h1>
+    <article className={styles.article}>
+      <h1 className={styles.title}>{thought.meta.title}</h1>
       <div
-        className="markdown"
+        className={styles.content}
         dangerouslySetInnerHTML={{ __html: thought.content }}
       />
-    </section>
+    </article>
   );
 }
