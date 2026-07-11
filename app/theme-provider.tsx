@@ -1,26 +1,60 @@
 "use client";
 
-import { useEffect, type PropsWithChildren } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+  type PropsWithChildren,
+} from "react";
+
+type Theme = "light" | "dark";
+
+interface ThemeContextValue {
+  theme: Theme;
+  toggle: () => void;
+}
+
+const ThemeContext = createContext<ThemeContextValue>({
+  theme: "light",
+  toggle: () => {},
+});
+
+export const useTheme = () => useContext(ThemeContext);
 
 export function ThemeProvider({ children }: PropsWithChildren) {
+  const [theme, setTheme] = useState<Theme>("light");
+  const didLoadTheme = useRef(false);
+
   useEffect(() => {
-    const setDarkTheme = (dark: boolean) => {
-      if (dark) {
-        document.documentElement.setAttribute("data-theme", "dark");
-      } else {
-        document.documentElement.removeAttribute("data-theme");
-      }
-    };
+    const saved = localStorage.getItem("theme") as Theme | null;
+    const initial =
+      saved ??
+      (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", initial);
+    localStorage.setItem("theme", initial);
 
-    const handleChangeTheme = (e: MediaQueryListEvent) =>
-      setDarkTheme(e.matches);
-
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    setDarkTheme(mediaQuery.matches);
-
-    mediaQuery.addEventListener("change", handleChangeTheme);
-    return () => mediaQuery.removeEventListener("change", handleChangeTheme);
+    requestAnimationFrame(() => {
+      didLoadTheme.current = true;
+      setTheme(initial);
+    });
   }, []);
 
-  return <>{children}</>;
+  useEffect(() => {
+    if (!didLoadTheme.current) {
+      return;
+    }
+
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggle = () => setTheme((t) => (t === "dark" ? "light" : "dark"));
+
+  return (
+    <ThemeContext.Provider value={{ theme, toggle }}>
+      {children}
+    </ThemeContext.Provider>
+  );
 }

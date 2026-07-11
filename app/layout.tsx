@@ -1,6 +1,5 @@
 import "styles/globals.css";
 import type { Metadata, Viewport } from "next";
-import Script from "next/script";
 import Footer from "components/Footer";
 import Header from "components/Header";
 import { ThemeProvider } from "./theme-provider";
@@ -37,9 +36,13 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Libre+Caslon+Text:ital@0;1&display=swap"
           rel="stylesheet"
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("theme");if(!t){t=matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"}document.documentElement.setAttribute("data-theme",t)}catch(e){}})()`,
+          }}
+        />
       </head>
       <body>
-        <Script src="https://use.fonticons.com/13897413.js" />
         <ThemeProvider>
           <Header />
           <main>{children}</main>
