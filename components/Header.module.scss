@@ -137,3 +137,9 @@
     color: var(--accent);
   }
 }
+
+@media (max-width: 400px) {
+  .navLink:first-child {
+    display: none;
+  }
+}
