@@ -12,7 +12,14 @@ Having the task of administering servers where I work, Vim and I are no longer a
 
 Recently I have found how lightning fast Vim actually is. With much less resources to load, it's performaces gains leaps and bounds. Normally, you find yourself doing something like this:
 
-![Sublime Find and Replace](https://nodefolio.s3.amazonaws.com/thoughts/Screen%20Shot%202014-05-19%20at%202.46.13%20AM.png "Sublime Find and Replace")
+```text
+Sublime Text - Find and Replace
+
+Find:      project.server.com
+Replace:   my.local/project
+
+[ Replace All ]
+```
 
 Don't bother with that anymore, especially if we're in the same boat and your sublime text takes a century to process the request. Instead, call upon your aquaintance, friend, best friend, or lover: Vim. Vim is fully capable of doing this. How capable you may ask? This capable:
 
