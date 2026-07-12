@@ -108,48 +108,48 @@
     color: var(--code-fg);
   }
 
-  .hljs-comment,
-  .hljs-quote {
+  :global(.hljs-comment),
+  :global(.hljs-quote) {
     color: var(--code-com);
     font-style: italic;
   }
 
-  .hljs-keyword,
-  .hljs-operator,
-  .hljs-selector-tag,
-  .hljs-literal,
-  .hljs-built_in,
-  .hljs-type,
-  .hljs-name {
+  :global(.hljs-keyword),
+  :global(.hljs-operator),
+  :global(.hljs-selector-tag),
+  :global(.hljs-literal),
+  :global(.hljs-built_in),
+  :global(.hljs-type),
+  :global(.hljs-name) {
     color: var(--code-kw);
   }
 
-  .hljs-string,
-  .hljs-regexp,
-  .hljs-template-variable,
-  .hljs-meta .hljs-string {
+  :global(.hljs-string),
+  :global(.hljs-regexp),
+  :global(.hljs-template-variable),
+  :global(.hljs-meta .hljs-string) {
     color: var(--code-str);
   }
 
-  .hljs-number,
-  .hljs-symbol,
-  .hljs-bullet,
-  .hljs-params {
+  :global(.hljs-number),
+  :global(.hljs-symbol),
+  :global(.hljs-bullet),
+  :global(.hljs-params) {
     color: var(--code-num);
   }
 
-  .hljs-title,
-  .hljs-title.function_,
-  .hljs-section,
-  .hljs-attr,
-  .hljs-property,
-  .hljs-variable {
+  :global(.hljs-title),
+  :global(.hljs-title.function_),
+  :global(.hljs-section),
+  :global(.hljs-attr),
+  :global(.hljs-property),
+  :global(.hljs-variable) {
     color: var(--code-fn);
   }
 
-  .hljs-meta,
-  .hljs-subst,
-  .hljs-comment .hljs-doctag {
+  :global(.hljs-meta),
+  :global(.hljs-subst),
+  :global(.hljs-comment .hljs-doctag) {
     color: var(--code-meta);
   }
 

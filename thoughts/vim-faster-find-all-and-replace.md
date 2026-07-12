@@ -23,13 +23,13 @@ Replace:   my.local/project
 
 Don't bother with that anymore, especially if we're in the same boat and your sublime text takes a century to process the request. Instead, call upon your aquaintance, friend, best friend, or lover: Vim. Vim is fully capable of doing this. How capable you may ask? This capable:
 
-```javascript
+```vim
 :%s/project.server.com/my.local\/project/g
 ```
 
 ## What Does This Do?
 
-```javascript
+```vim
 // Tells Vim to search
 %s
 // Tells Vim what to search for
