@@ -73,18 +73,78 @@
   }
 
   pre {
-    background: var(--card);
-    border: 1px solid var(--line);
-    padding: 20px;
+    margin: 28px 0;
+    background: var(--code-bg);
+    border: 1px solid var(--line-strong);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  pre code.hljs {
+    display: block;
+    padding: 18px 20px;
+    background: transparent;
+    color: var(--code-fg);
     overflow-x: auto;
-    font-size: 15px;
-    line-height: 1.5;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   code {
     font-family:
       "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
     font-size: 0.9em;
+  }
+
+  :not(pre) > code {
+    background: var(--code-bg);
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    padding: 2px 6px;
+    color: var(--code-fg);
+  }
+
+  .hljs-comment,
+  .hljs-quote {
+    color: var(--code-com);
+    font-style: italic;
+  }
+
+  .hljs-keyword,
+  .hljs-selector-tag,
+  .hljs-literal,
+  .hljs-built_in,
+  .hljs-name {
+    color: var(--code-kw);
+  }
+
+  .hljs-string,
+  .hljs-regexp,
+  .hljs-meta .hljs-string {
+    color: var(--code-str);
+  }
+
+  .hljs-number,
+  .hljs-symbol,
+  .hljs-bullet {
+    color: var(--code-num);
+  }
+
+  .hljs-title,
+  .hljs-title.function_,
+  .hljs-section,
+  .hljs-attr,
+  .hljs-variable {
+    color: var(--code-fn);
+  }
+
+  .hljs-meta,
+  .hljs-comment .hljs-doctag {
+    color: var(--code-meta);
   }
 
   img {

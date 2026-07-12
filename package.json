@@ -18,8 +18,10 @@
     "next": "^16.2.10",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
+    "rehype-highlight": "^7.0.2",
+    "rehype-stringify": "^10.0.1",
     "remark": "^15.0.1",
-    "remark-html": "^16.0.1",
+    "remark-rehype": "^11.1.2",
     "strip-markdown": "^6.0.0"
   },
   "devDependencies": {
