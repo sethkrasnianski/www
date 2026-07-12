@@ -33,9 +33,21 @@ export default async function ThoughtPage({ params }: ThoughtPageProps) {
     notFound();
   }
 
+  const date = new Date(thought.meta.date);
+  const month = new Intl.DateTimeFormat("en-US", { month: "short" }).format(
+    date,
+  );
+
   return (
     <article className={styles.article}>
-      <h1 className={styles.title}>{thought.meta.title}</h1>
+      <header className={styles.header}>
+        <time className={styles.date} dateTime={date.toISOString()}>
+          <span className={styles.month}>{month}</span>
+          <span className={styles.day}>{date.getDate()}</span>
+          <span className={styles.year}>{date.getFullYear()}</span>
+        </time>
+        <h1 className={styles.title}>{thought.meta.title}</h1>
+      </header>
       <div
         className={styles.content}
         dangerouslySetInnerHTML={{ __html: thought.content }}
