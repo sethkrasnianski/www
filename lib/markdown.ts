@@ -68,7 +68,7 @@ export async function markdownToHtml(markdown: string) {
   const result = await remark()
     .use(anchorHeadings)
     .use(remarkRehype)
-    .use(rehypeHighlight)
+    .use(rehypeHighlight, { detect: false })
     .use(rehypeStringify)
     .process(markdown);
   return result.toString();

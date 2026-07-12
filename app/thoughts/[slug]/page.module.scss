@@ -115,22 +115,26 @@
   }
 
   .hljs-keyword,
+  .hljs-operator,
   .hljs-selector-tag,
   .hljs-literal,
   .hljs-built_in,
+  .hljs-type,
   .hljs-name {
     color: var(--code-kw);
   }
 
   .hljs-string,
   .hljs-regexp,
+  .hljs-template-variable,
   .hljs-meta .hljs-string {
     color: var(--code-str);
   }
 
   .hljs-number,
   .hljs-symbol,
-  .hljs-bullet {
+  .hljs-bullet,
+  .hljs-params {
     color: var(--code-num);
   }
 
@@ -138,11 +142,13 @@
   .hljs-title.function_,
   .hljs-section,
   .hljs-attr,
+  .hljs-property,
   .hljs-variable {
     color: var(--code-fn);
   }
 
   .hljs-meta,
+  .hljs-subst,
   .hljs-comment .hljs-doctag {
     color: var(--code-meta);
   }
